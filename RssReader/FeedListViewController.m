@@ -7,6 +7,7 @@
 //
 
 #import "FeedListViewController.h"
+#import "DetailViewController.h"
 #import "MWFeedParser.h"
 
 @interface FeedListViewController () <MWFeedParserDelegate>
@@ -73,7 +74,7 @@
 
 - (void)initParser
 {
-    NSURL *feedUrl = [NSURL URLWithString:@"feed://www.applesysu.com/rss"];
+    NSURL *feedUrl = [NSURL URLWithString:@"http://feeds.feedburner.com/maple_valley"];
     self.feedParser = [[MWFeedParser alloc]initWithFeedURL:feedUrl];
     [self.feedParser setDelegate:self];
     [self.feedParser setFeedParseType:ParseTypeFull];
@@ -135,7 +136,6 @@
     // Configure the cell...
     MWFeedItem *item = [self.feedItemArray objectAtIndex:indexPath.row];
     [cell.textLabel setText:[item title]];
-    NSLog(@"%@", item);
     
     return cell;
 }
@@ -184,12 +184,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
      // ...
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    detailViewController.item = [self.feedItemArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end
