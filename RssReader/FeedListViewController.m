@@ -11,10 +11,19 @@
 
 @interface FeedListViewController () <MWFeedParserDelegate>
 @property (nonatomic, strong) MWFeedParser *feedParser;
+@property (nonatomic, strong) NSMutableArray *feedItemArray;
 
 @end
 
 @implementation FeedListViewController
+
+- (NSMutableArray *)feedItemArray
+{
+    if (!_feedItemArray) {
+        _feedItemArray = [NSMutableArray array];
+    }
+    return _feedItemArray;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,6 +39,7 @@
     [super viewDidLoad];
     
     [self initParser];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)]];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,6 +54,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.feedParser = nil;
+    self.feedItemArray = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -51,13 +62,22 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 #pragma mark - parser methods
+- (void)refresh
+{
+    [self.feedParser stopParsing];
+    [self.feedItemArray removeAllObjects];
+    [self.feedParser parse];
+}
+
 - (void)initParser
 {
     NSURL *feedUrl = [NSURL URLWithString:@"feed://www.applesysu.com/rss"];
     self.feedParser = [[MWFeedParser alloc]initWithFeedURL:feedUrl];
     [self.feedParser setDelegate:self];
     [self.feedParser setFeedParseType:ParseTypeFull];
+    [self.feedParser setConnectionType:ConnectionTypeAsynchronously];
     [self.feedParser parse];
 }
 - (void)feedParserDidStart:(MWFeedParser *)parser
@@ -68,14 +88,17 @@
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info
 {
     NSLog(@"FeedParser: %@ did Parse Feed Info: %@", parser, info);
+    self.title = info.title;
 }
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item
 {
     NSLog(@"FeedParser: %@ did parse feed item: %@", parser, item);
+    [self.feedItemArray addObject:item];
 }
 - (void)feedParserDidFinish:(MWFeedParser *)parser
 {
     NSLog(@"FeedParser: %@ did finish", parser);
+    [self.tableView reloadData];
     
 }
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error
@@ -88,24 +111,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"%@", self.feedItemArray);
+
+    return [self.feedItemArray count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
     
     // Configure the cell...
+    MWFeedItem *item = [self.feedItemArray objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[item title]];
+    NSLog(@"%@", item);
     
     return cell;
 }
