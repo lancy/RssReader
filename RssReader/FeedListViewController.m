@@ -17,6 +17,8 @@
 @end
 
 @implementation FeedListViewController
+static NSString *kFeedUrl = @"http://feeds.feedburner.com/maple_valley";
+
 
 - (NSMutableArray *)feedItemArray
 {
@@ -25,6 +27,8 @@
     }
     return _feedItemArray;
 }
+
+#pragma mark - life cycle
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -74,7 +78,7 @@
 
 - (void)initParser
 {
-    NSURL *feedUrl = [NSURL URLWithString:@"http://feeds.feedburner.com/maple_valley"];
+    NSURL *feedUrl = [NSURL URLWithString:kFeedUrl];
     self.feedParser = [[MWFeedParser alloc]initWithFeedURL:feedUrl];
     [self.feedParser setDelegate:self];
     [self.feedParser setFeedParseType:ParseTypeFull];

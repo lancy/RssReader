@@ -10,9 +10,11 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIWebView *contentWebView;
 @end
 
 @implementation DetailViewController
+@synthesize contentWebView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,13 +30,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44)];
-    [self.view addSubview:webView];
-    [webView loadHTMLString:self.item.summary baseURL:[NSURL URLWithString:self.item.link]];
+    [self loadFeedItemContent];
 }
 
 - (void)viewDidUnload
 {
+    [self setContentWebView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     self.item = nil;
@@ -44,6 +45,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - load feed methods
+
+- (void)loadFeedItemContent
+{
+    [self.contentWebView loadHTMLString:self.item.summary baseURL:[NSURL URLWithString:self.item.link]];
 }
 
 @end
