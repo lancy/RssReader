@@ -51,7 +51,14 @@
 
 - (void)loadFeedItemContent
 {
-    [self.contentWebView loadHTMLString:self.item.summary baseURL:[NSURL URLWithString:self.item.link]];
+    NSString *htmlString = self.item.summary;
+    NSError *error;
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"Clearness" ofType:@"css"];
+    NSString *cssString = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&error];
+    htmlString = [cssString stringByAppendingString:htmlString];
+    NSLog(@"after = %@", htmlString);
+    
+    [self.contentWebView loadHTMLString:htmlString baseURL:[NSURL URLWithString:self.item.link]];
 }
 
 @end

@@ -28,6 +28,7 @@
 		BF3EFC8C15FF3AAA0082BB22 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC8315FF3AAA0082BB22 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF3EFC8D15FF3AAA0082BB22 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC8515FF3AAA0082BB22 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BF3EFC8E15FF3AAA0082BB22 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC8715FF3AAA0082BB22 /* NSString+XMLEntities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC9015FF57CA0082BB22 /* Clearness.css in Resources */ = {isa = PBXBuildFile; fileRef = BF3EFC8F15FF57CA0082BB22 /* Clearness.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		BF3EFC8515FF3AAA0082BB22 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "MWFeedParser/NSString+HTML.m"; sourceTree = "<group>"; };
 		BF3EFC8615FF3AAA0082BB22 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+XMLEntities.h"; path = "MWFeedParser/NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		BF3EFC8715FF3AAA0082BB22 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+XMLEntities.m"; path = "MWFeedParser/NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		BF3EFC8F15FF57CA0082BB22 /* Clearness.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Clearness.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		BF3EFC0615FF1BB50082BB22 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF3EFC8F15FF57CA0082BB22 /* Clearness.css */,
 				BF3EFC0715FF1BB50082BB22 /* RssReader-Info.plist */,
 				BF3EFC0815FF1BB50082BB22 /* InfoPlist.strings */,
 				BF3EFC0B15FF1BB50082BB22 /* main.m */,
@@ -274,6 +277,7 @@
 			files = (
 				BF3EFC0A15FF1BB50082BB22 /* InfoPlist.strings in Resources */,
 				BF3EFC1315FF1BB50082BB22 /* MainStoryboard.storyboard in Resources */,
+				BF3EFC9015FF57CA0082BB22 /* Clearness.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
