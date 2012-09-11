@@ -26,6 +26,22 @@
 		BF3EFC4F15FF1C2E0082BB22 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4915FF1C2E0082BB22 /* NSDate+InternetDateTime.m */; };
 		BF3EFC5015FF1C2E0082BB22 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4B15FF1C2E0082BB22 /* GTMNSString+HTML.m */; };
 		BF3EFC5115FF1C2E0082BB22 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4D15FF1C2E0082BB22 /* NSString+XMLEntities.m */; };
+		BF3EFC5415FF1C7E0082BB22 /* FeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC5315FF1C7E0082BB22 /* FeedListViewController.m */; };
+		BF3EFC5515FF1FC30082BB22 /* MWFeedParser.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC3B15FF1C0B0082BB22 /* MWFeedParser.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5615FF1FC30082BB22 /* MWFeedParser_Private.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC3C15FF1C0B0082BB22 /* MWFeedParser_Private.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5715FF1FC30082BB22 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC3D15FF1C0B0082BB22 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5815FF1FC30082BB22 /* MWFeedInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC3E15FF1C0B0082BB22 /* MWFeedInfo.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5915FF1FC30082BB22 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC3F15FF1C0B0082BB22 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5A15FF1FC30082BB22 /* MWFeedItem.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4015FF1C0B0082BB22 /* MWFeedItem.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5B15FF1FC30082BB22 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4115FF1C0B0082BB22 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5C15FF1FC30082BB22 /* NSString+HTML.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4615FF1C2E0082BB22 /* NSString+HTML.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5D15FF1FC30082BB22 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4715FF1C2E0082BB22 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5E15FF1FC30082BB22 /* NSDate+InternetDateTime.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4815FF1C2E0082BB22 /* NSDate+InternetDateTime.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC5F15FF1FC30082BB22 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4915FF1C2E0082BB22 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC6015FF1FC30082BB22 /* GTMNSString+HTML.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4A15FF1C2E0082BB22 /* GTMNSString+HTML.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC6115FF1FC30082BB22 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4B15FF1C2E0082BB22 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC6215FF1FC30082BB22 /* NSString+XMLEntities.h in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4C15FF1C2E0082BB22 /* NSString+XMLEntities.h */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF3EFC6315FF1FC30082BB22 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3EFC4D15FF1C2E0082BB22 /* NSString+XMLEntities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +87,8 @@
 		BF3EFC4B15FF1C2E0082BB22 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		BF3EFC4C15FF1C2E0082BB22 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		BF3EFC4D15FF1C2E0082BB22 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		BF3EFC5215FF1C7E0082BB22 /* FeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListViewController.h; sourceTree = "<group>"; };
+		BF3EFC5315FF1C7E0082BB22 /* FeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +152,8 @@
 				BF3EFC0E15FF1BB50082BB22 /* AppDelegate.h */,
 				BF3EFC0F15FF1BB50082BB22 /* AppDelegate.m */,
 				BF3EFC1115FF1BB50082BB22 /* MainStoryboard.storyboard */,
+				BF3EFC5215FF1C7E0082BB22 /* FeedListViewController.h */,
+				BF3EFC5315FF1C7E0082BB22 /* FeedListViewController.m */,
 				BF3EFC0615FF1BB50082BB22 /* Supporting Files */,
 			);
 			path = RssReader;
@@ -298,8 +318,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3EFC5515FF1FC30082BB22 /* MWFeedParser.h in Sources */,
+				BF3EFC5615FF1FC30082BB22 /* MWFeedParser_Private.h in Sources */,
+				BF3EFC5715FF1FC30082BB22 /* MWFeedParser.m in Sources */,
+				BF3EFC5815FF1FC30082BB22 /* MWFeedInfo.h in Sources */,
+				BF3EFC5915FF1FC30082BB22 /* MWFeedInfo.m in Sources */,
+				BF3EFC5A15FF1FC30082BB22 /* MWFeedItem.h in Sources */,
+				BF3EFC5B15FF1FC30082BB22 /* MWFeedItem.m in Sources */,
+				BF3EFC5C15FF1FC30082BB22 /* NSString+HTML.h in Sources */,
+				BF3EFC5D15FF1FC30082BB22 /* NSString+HTML.m in Sources */,
+				BF3EFC5E15FF1FC30082BB22 /* NSDate+InternetDateTime.h in Sources */,
+				BF3EFC5F15FF1FC30082BB22 /* NSDate+InternetDateTime.m in Sources */,
+				BF3EFC6015FF1FC30082BB22 /* GTMNSString+HTML.h in Sources */,
+				BF3EFC6115FF1FC30082BB22 /* GTMNSString+HTML.m in Sources */,
+				BF3EFC6215FF1FC30082BB22 /* NSString+XMLEntities.h in Sources */,
+				BF3EFC6315FF1FC30082BB22 /* NSString+XMLEntities.m in Sources */,
 				BF3EFC0C15FF1BB50082BB22 /* main.m in Sources */,
 				BF3EFC1015FF1BB50082BB22 /* AppDelegate.m in Sources */,
+				BF3EFC5415FF1C7E0082BB22 /* FeedListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
